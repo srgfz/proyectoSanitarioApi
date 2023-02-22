@@ -29,7 +29,7 @@ Tecnico.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    pass: {
+    password: {
         type: DataTypes.STRING,
         allowNull: false,
     },

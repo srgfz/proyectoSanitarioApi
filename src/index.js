@@ -2,7 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
 
-const apiroutes = require("./routes/apiRouter");
+const apiroutes = require("./routes/v1/apiRouter");
 
 //Improtamos la DB:
 const sequelize = require("./db/db");

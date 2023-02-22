@@ -1,9 +1,9 @@
 //Declaro sequelize
 const sequelize = require("./db/db")
-const {Model, DataTypes} = require("sequelize")
+const { Model, DataTypes } = require("sequelize")
 
 //Declaro la clase
-class Muestra extends Model {}
+class Muestra extends Model { }
 
 //Creo las tablas
 Muestra.innit({
@@ -14,12 +14,12 @@ Muestra.innit({
         autoIncrement: true
     },
     fecha: {
-        type:DataTypes.DATE,
+        type: DataTypes.DATE,
         allowNull: false
     },
     observaciones: {
         type: DataTypes.TEXT('medium'),
-        allowNull: false
+        //allowNull: false
     },
     codigoQr: {
         type: DataTypes.STRING,
@@ -37,10 +37,10 @@ Muestra.innit({
         type: DataTypes.STRING,
         allowNull: false
     }
-},{
+}, {
     sequelize,
     modelName: "muestra",
-    timestamps: false    
+    timestamps: false
 })
 
 module.exports = Muestra

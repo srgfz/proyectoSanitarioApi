@@ -1,6 +1,6 @@
 const tecnicosRouter = require("express").Router();//En las rutas siempre ejecuto express.Router()
 //Importo el controlador de heroes
-const tecnicosController = require("../controllers/tecnicosController")
+const tecnicosController = require("../../controllers/tecnicosController")
 
 
 //Acciones de heroes llamando a los métodos de su controlador:

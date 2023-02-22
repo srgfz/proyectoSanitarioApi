@@ -1,6 +1,6 @@
 const cassettesRouter = require("express").Router();//En las rutas siempre ejecuto express.Router()
 //Importo el controlador de heroes
-const cassettesController = require("../controllers/cassettesController")
+const cassettesController = require("../../controllers/cassettesController")
 
 
 //Acciones de heroes llamando a los métodos de su controlador:

@@ -17,7 +17,7 @@ Cassette.init({
         type: DataTypes.STRING,
         //allowNull: false,
     },
-    qr: {
+    codigoQR: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -25,7 +25,7 @@ Cassette.init({
         type: DataTypes.TEXT("medium"),
         //allowNull: false,
     },
-    img: {
+    imagenes: {
         type: DataTypes.STRING,
         //allowNull: false,
     },
