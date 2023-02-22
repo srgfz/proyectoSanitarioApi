@@ -5,9 +5,9 @@ const app = express();
 const apiroutes = require("./routes/apiRouter");
 
 //Improtamos la DB:
-const sequelize = require("./database/db");
+const sequelize = require("./db/db");
 //Importamos las relaciones de la db:
-require("./database/associations")
+require("./db/associations")
 
 
 
@@ -15,7 +15,7 @@ require("./database/associations")
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // conexión con mysql
-app.use("/ordenadores", apiroutes);
+app.use("/sanitaria", apiroutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
