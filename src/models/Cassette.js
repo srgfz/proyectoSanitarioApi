@@ -1,43 +1,39 @@
 const sequelize = require("../db/db")
 const { Model, DataTypes } = require("sequelize");
 
-class Tecnico extends Model { }
+class Cassette extends Model { }
 
-Tecnico.init({
+Cassette.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     },
-    nombre: {
+    fecha: {
+        type: DataTypes.DATE,
+        allowNull: false,
+    },
+    caracteristicas: {
+        type: DataTypes.STRING,
+        //allowNull: false,
+    },
+    qr: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    apellidos: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    observaciones: {
+        type: DataTypes.TEXT("medium"),
+        //allowNull: false,
     },
-    curso: {
+    img: {
         type: DataTypes.STRING,
-        allowNull: false,
-    },
-    centro: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    pass: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        //allowNull: false,
     },
 },
     {
         sequelize,
-        modelName: "tecnico",
+        modelName: "cassette",
         timestamps: false,
     });
 
-module.exports = Tecnico;
+module.exports = Cassette;

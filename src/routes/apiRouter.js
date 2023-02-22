@@ -1,11 +1,13 @@
 const apirouter = require("express").Router();
 
-const componentesRouter = require("./tecnicosRouter")
+const tecnicosRouter = require("./tecnicosRouter")
+const cassettesRouter = require("./cassettesRouter")
 
 
 
 
-apirouter.use("/tecnicos", componentesRouter)
+apirouter.use("/tecnicos", tecnicosRouter)
+apirouter.use("/cassettes", cassettesRouter)
 
 
 
