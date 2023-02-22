@@ -1,12 +1,12 @@
 //Declaro sequelize
-const sequelize = require("./db/db")
-const { Model, DataTypes } = require("sequelize")
+const sequelize = require("../db/db")
+const { Model, DataTypes } = require("sequelize");
 
 //Declaro la clase
 class Corte extends Model { }
 
 //Creo las tablas
-Corte.innit({
+Corte.init({
     //Creo atributo
     id: {
         type: DataTypes.INTEGER,

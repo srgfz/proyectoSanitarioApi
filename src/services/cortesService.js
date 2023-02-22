@@ -9,7 +9,7 @@ const getAll = async () => {
 const getOne = async (id) => {
     //return await Corte.findByPk(id)
     const [tecnicos, metadata] = await sequalize.query(
-        `SELECT * FROM tecnicos WHERE id = ${id}`
+        `SELECT * FROM cortes WHERE id = ${id}`
     )
     return tecnicos
 }
