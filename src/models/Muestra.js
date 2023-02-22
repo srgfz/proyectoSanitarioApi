@@ -3,10 +3,10 @@ const sequelize = require("./db/db")
 const {Model, DataTypes} = require("sequelize")
 
 //Declaro la clase
-class Corte extends Model {}
+class Muestra extends Model {}
 
 //Creo las tablas
-Corte.innit({
+Muestra.innit({
     //Creo atributo
     id: {
         type: DataTypes.INTEGER,
@@ -24,11 +24,23 @@ Corte.innit({
     codigoQr: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    imagenes: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    organo: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    tincion: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 },{
     sequelize,
-    modelName: "corte",
+    modelName: "muestra",
     timestamps: false    
 })
 
-module.exports = Corte
+module.exports = Muestra
