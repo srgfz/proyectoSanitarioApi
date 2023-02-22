@@ -1,12 +1,12 @@
 //Declaro sequelize
-const sequelize = require("./db/db")
+const sequelize = require("../db/db")
 const { Model, DataTypes } = require("sequelize")
 
 //Declaro la clase
 class Muestra extends Model { }
 
 //Creo las tablas
-Muestra.innit({
+Muestra.init({
     //Creo atributo
     id: {
         type: DataTypes.INTEGER,
