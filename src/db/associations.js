@@ -1,13 +1,18 @@
-// const Cliente = require("./models/Cliente")
-// const Producto = require("./models/Producto")
-// const Proveedor = require("./models/Proveedores")
-// const Compra = require("./models/Compra")
+const Cassette = require("../models/Cassette")
+const Corte = require("../models/Corte")
+const Muestra = require("../models/Muestra")
+const Tecnico = require("../models/Tecnico")
+
 
 
 //Relación 1 a N:
-// Proveedor.hasMany(Producto)
-// Producto.belongsTo(Proveedor)
+Tecnico.hasMany(Cassette)
+Cassette.belongsTo(Tecnico)
 
-//Relación M:N --> Se crea una tabla con el nombre que la pongamos que relacionará los ids de ambas tablas que se relacionan
-// Producto.belongsToMany(Cliente, { through: "compras" })
-// Cliente.belongsToMany(Producto, { through: "compras" })
+Cassette.hasMany(Corte)
+Corte.belongsTo(Cassette)
+
+Corte.hasMany(Muestra)
+Muestra.belongsTo(Corte)
+
+
