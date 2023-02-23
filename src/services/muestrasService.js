@@ -7,11 +7,7 @@ const getAll = async () => {
 }
 
 const getOne = async (id) => {
-    //return await Muestra.findByPk(id)
-    const [muestras, metadata] = await sequalize.query(
-        `SELECT * FROM muestras WHERE id = ${id}`
-    )
-    return muestras
+    return await Muestra.findByPk(id)
 }
 
 const post = async (newItem) => {

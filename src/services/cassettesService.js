@@ -7,11 +7,7 @@ const getAll = async () => {
 }
 
 const getOne = async (id) => {
-    //return await Cassette.findByPk(id)
-    const [tecnicos, metadata] = await sequalize.query(
-        `SELECT * FROM cassettes WHERE id = ${id}`
-    )
-    return tecnicos
+    return await Cassette.findByPk(id)
 }
 
 const post = async (newItem) => {
