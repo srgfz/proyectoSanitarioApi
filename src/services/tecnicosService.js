@@ -24,6 +24,10 @@ const createToken = (user) => {
 }
 
 const login = async (body) => {
+    //Si alguno de los campos está vacío
+    if (typeof body !== 'undefined' || typeof body.password !== 'undefined' || typeof body.email !== 'undefined') {
+        return { error: "Debe introducir un email y una contraseña" };
+    }
     const user = await Tecnico.findOne({
         where: {
             email: body.email,
