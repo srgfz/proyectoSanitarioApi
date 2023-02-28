@@ -17,7 +17,7 @@ const createToken = (user) => {
     const payload = {
         usuarioId: user.id,//id
         createdAt: moment().unix(),//Fecha de creación
-        expiredAt: moment().add(15, "minutes").unix()//Duración
+        expiredAt: moment().add(6, "hours").unix()//Duración
     }
     return jwt.encode(payload, "Frase para probar .env")
     //Este token lo recibiré en cliente y lo guardaré (en localStorage)
