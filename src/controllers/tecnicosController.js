@@ -13,8 +13,12 @@ const login = async (req, res) => {
 }
 
 const post = async (req, res) => {
-    tecnicosService.post(req.body)
-    res.status(200).json(req.body)
+    const resp = await tecnicosService.post(req.body)
+    if (resp.name === "SequelizeUniqueConstraintError") {
+        res.status(200).json({ Error: "El email introducido ya está vinculado a una cuenta; si está registrado inicie sesión" })
+    } else {
+        res.status(200).json(resp)
+    }
 }
 
 const put = (req, res) => {
