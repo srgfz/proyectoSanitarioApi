@@ -9,6 +9,12 @@ const Tecnico = require("../models/Tecnico")
 Tecnico.hasMany(Cassette)
 Cassette.belongsTo(Tecnico)
 
+Tecnico.hasMany(Corte)
+Corte.belongsTo(Tecnico)
+
+Tecnico.hasMany(Muestra)
+Muestra.belongsTo(Tecnico)
+
 Cassette.hasMany(Corte)
 Corte.belongsTo(Cassette)
 
