@@ -6,6 +6,8 @@ const cassettesController = require("../../controllers/cassettesController")
 //Acciones de heroes llamando a los métodos de su controlador:
 cassettesRouter.get("/", cassettesController.getAll)
 cassettesRouter.get("/:id", cassettesController.getOne)
+cassettesRouter.get("/tecnico/:id", cassettesController.getByTecnico)
+cassettesRouter.get("/cortes/:id", cassettesController.getCortes)
 cassettesRouter.post("/", cassettesController.post)
 cassettesRouter.put("/:id", cassettesController.put)
 cassettesRouter.patch("/:id", cassettesController.patch)

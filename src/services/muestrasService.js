@@ -10,6 +10,14 @@ const getOne = async (id) => {
     return await Muestra.findByPk(id)
 }
 
+const getByTecnico = async (tecnicoId) => {
+    return await Muestra.findAll({
+        where: {
+            tecnicoId: tecnicoId,
+        },
+    })
+}
+
 const post = async (newItem) => {
     try {
         return await Muestra.create(newItem);
@@ -34,6 +42,7 @@ const remove = async (id) => {
 module.exports = {
     getAll,
     getOne,
+    getByTecnico,
     post,
     put,
     patch,

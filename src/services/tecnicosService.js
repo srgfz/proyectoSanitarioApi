@@ -1,16 +1,50 @@
 //Importamos el modelo de componente:
 const Tecnico = require("../models/Tecnico")
+const Cassette = require("../models/Cassette")
+const Corte = require("../models/Corte")
+const Muestra = require("../models/Muestra")
+
+
+
 const sequalize = require("../db/db")
 const bcryptjs = require('bcryptjs');
 const jwt = require('jwt-simple')
 const moment = require('moment')
 
 const getAll = async () => {
-    return await Tecnico.findAll()
+    return await Cassette.findAll()
 }
 
 const getOne = async (id) => {
-    return await Tecnico.findByPk(id)
+    return await Tecnico.findOne({
+        where: {
+            id: id,
+        },
+        include: [
+            {
+                model: Cassette,
+                include: {
+                    model: Corte,
+                    include: {
+                        model: Muestra,
+                    },
+                },
+            },
+            {
+                model: Corte,
+                include: {
+                    model: Muestra,
+                },
+            },
+            {
+                model: Muestra,
+            },
+        ]
+    })
+}
+
+const getInfo = async (id) => {
+    return await Cassette.findByPk(id)
 }
 
 const createToken = (user) => {
@@ -75,6 +109,7 @@ const remove = async (id) => {
 module.exports = {
     getAll,
     getOne,
+    getInfo,
     login,
     post,
     put,

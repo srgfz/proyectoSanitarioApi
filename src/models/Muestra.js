@@ -21,7 +21,7 @@ Muestra.init({
         type: DataTypes.TEXT('medium'),
         //allowNull: false
     },
-    codigoQr: {
+    codigoQR: {
         type: DataTypes.STRING,
         allowNull: false
     },

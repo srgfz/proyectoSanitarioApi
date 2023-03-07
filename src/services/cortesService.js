@@ -1,5 +1,6 @@
 //Importamos el modelo de componente:
 const Corte = require("../models/Corte")
+const Muestra = require("../models/Muestra")
 const sequalize = require("../db/db")
 
 const getAll = async () => {
@@ -8,6 +9,25 @@ const getAll = async () => {
 
 const getOne = async (id) => {
     return await Corte.findByPk(id)
+}
+
+const getByTecnico = async (tecnicoId) => {
+    return await Corte.findAll({
+        where: {
+            tecnicoId: tecnicoId,
+        },
+    })
+}
+
+const getMuestras = async (id) => {
+    return await Corte.findOne({
+        where: {
+            id: id,
+        },
+        include: {
+            model: Muestra,
+        },
+    })
 }
 
 const post = async (newItem) => {
@@ -34,6 +54,8 @@ const remove = async (id) => {
 module.exports = {
     getAll,
     getOne,
+    getByTecnico,
+    getMuestras,
     post,
     put,
     patch,

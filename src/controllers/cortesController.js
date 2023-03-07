@@ -8,6 +8,13 @@ const getOne = async (req, res) => {
     res.json(await cortesService.getOne(req.params.id))
 }
 
+const getByTecnico = async (req, res) => {
+    res.json(await cortesService.getByTecnico(req.params.id))
+}
+
+const getMuestras = async (req, res) => {
+    res.json(await cortesService.getMuestras(req.params.id))
+}
 
 const post = async (req, res) => {
     cortesService.post(req.body)
@@ -31,6 +38,8 @@ const remove = async (req, res) => {
 module.exports = {
     getAll,
     getOne,
+    getByTecnico,
+    getMuestras,
     post,
     remove,
     put,

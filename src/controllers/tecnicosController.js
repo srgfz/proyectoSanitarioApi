@@ -8,6 +8,10 @@ const getOne = async (req, res) => {
     res.json(await tecnicosService.getOne(req.params.id))
 }
 
+const getInfo = async (req, res) => {
+    res.json(await tecnicosService.getInfo(req.params.id))
+}
+
 const login = async (req, res) => {
     res.json(await tecnicosService.login(req.body))
 }
@@ -38,6 +42,7 @@ const remove = async (req, res) => {
 module.exports = {
     getAll,
     getOne,
+    getInfo,
     login,
     post,
     remove,

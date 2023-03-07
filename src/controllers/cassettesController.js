@@ -8,6 +8,13 @@ const getOne = async (req, res) => {
     res.json(await cassettesService.getOne(req.params.id))
 }
 
+const getByTecnico = async (req, res) => {
+    res.json(await cassettesService.getByTecnico(req.params.id))
+}
+
+const getCortes = async (req, res) => {
+    res.json(await cassettesService.getCortes(req.params.id))
+}
 
 const post = async (req, res) => {
     cassettesService.post(req.body)
@@ -31,6 +38,8 @@ const remove = async (req, res) => {
 module.exports = {
     getAll,
     getOne,
+    getByTecnico,
+    getCortes,
     post,
     remove,
     put,
