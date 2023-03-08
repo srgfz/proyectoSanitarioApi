@@ -25,9 +25,9 @@ Cassette.init({
         type: DataTypes.TEXT("medium"),
         //allowNull: false,
     },
-    imagenes: {
+    organo: {
         type: DataTypes.STRING,
-        //allowNull: false,
+        allowNull: false
     },
 },
     {

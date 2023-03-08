@@ -1,7 +1,6 @@
 //Importamos el modelo de componente:
 const Tecnico = require("../models/Tecnico")
 const Cassette = require("../models/Cassette")
-const Corte = require("../models/Corte")
 const Muestra = require("../models/Muestra")
 
 
@@ -23,15 +22,6 @@ const getOne = async (id) => {
         include: [
             {
                 model: Cassette,
-                include: {
-                    model: Corte,
-                    include: {
-                        model: Muestra,
-                    },
-                },
-            },
-            {
-                model: Corte,
                 include: {
                     model: Muestra,
                 },

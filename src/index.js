@@ -22,6 +22,6 @@ app.listen(PORT, () => {
     console.log(`Servidor eschando en http://localhost:${PORT}`);
     // conexión con mysql
     sequelize
-        .sync({ force: false })
+        .sync({ force: true })
         .then(() => console.log("tablas sincronizadas"));
 });

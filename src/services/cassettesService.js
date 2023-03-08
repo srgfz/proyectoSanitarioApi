@@ -1,6 +1,5 @@
 //Importamos el modelo de componente:
 const Cassette = require("../models/Cassette")
-const Corte = require("../models/Corte")
 const Muestra = require("../models/Muestra")
 
 
@@ -22,16 +21,13 @@ const getByTecnico = async (tecnicoId) => {
     })
 }
 
-const getCortes = async (id) => {
+const getMuestras = async (id) => {
     return await Cassette.findOne({
         where: {
             id: id,
         },
         include: {
-            model: Corte,
-            include: {
-                model: Muestra,
-            },
+            model: Muestra,
         },
     })
 }
@@ -61,7 +57,7 @@ module.exports = {
     getAll,
     getOne,
     getByTecnico,
-    getCortes,
+    getMuestras,
     post,
     put,
     patch,

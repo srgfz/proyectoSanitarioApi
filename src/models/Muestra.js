@@ -25,14 +25,6 @@ Muestra.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    imagenes: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    organo: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
     tincion: {
         type: DataTypes.STRING,
         allowNull: false
