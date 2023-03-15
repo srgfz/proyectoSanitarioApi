@@ -11,7 +11,7 @@ tecnicosRouter.get("/login", tecnicosController.login)
 tecnicosRouter.get("/:id", middlewares.checkToken, tecnicosController.getOne)
 tecnicosRouter.get("/info/:id", middlewares.checkToken, tecnicosController.getInfo)
 tecnicosRouter.post("/register", tecnicosController.post)
-tecnicosRouter.put("/:id", tecnicosController.put)
+tecnicosRouter.put("/:id", middlewares.checkToken, tecnicosController.put)
 tecnicosRouter.patch("/:id", tecnicosController.patch)
 tecnicosRouter.delete("/:id", tecnicosController.remove)
 

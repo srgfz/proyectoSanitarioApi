@@ -1,7 +1,15 @@
 const jwt = require('jwt-simple')
 const moment = require('moment')
 
+const allowHeaders = (req, res, next) => {
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, key");
+
+}
+
+
 const checkToken = (req, res, next) => {
+    res.setHeader("Access-Control-Allow-Headers", "*");
+
     const token = req.headers["key"]//headers es un array y localizo su clave
     let playload = {}
 

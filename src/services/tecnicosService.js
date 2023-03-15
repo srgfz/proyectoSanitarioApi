@@ -11,7 +11,7 @@ const jwt = require('jwt-simple')
 const moment = require('moment')
 
 const getAll = async () => {
-    return await Cassette.findAll()
+    return await Tecnico.findAll()
 }
 
 const getOne = async (id) => {
@@ -34,7 +34,7 @@ const getOne = async (id) => {
 }
 
 const getInfo = async (id) => {
-    return await Cassette.findByPk(id)
+    return await Tecnico.findByPk(id)
 }
 
 const createToken = (user) => {
