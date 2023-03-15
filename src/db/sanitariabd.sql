@@ -44,16 +44,16 @@ CREATE TABLE `cassettes` (
 --
 
 INSERT INTO `cassettes` (`id`, `fecha`, `caracteristicas`, `codigoQR`, `observaciones`, `organo`, `tecnicoId`) VALUES
-(1, '2022-12-24 00:00:00', 'Características Cassette 1', 'CódigoQR1', 'Observaciones Cassette 1', '', 1),
-(2, '2022-12-26 00:00:00', 'Características Cassette 2', 'CódigoQR2', 'Observaciones Cassette 2', '', 1),
-(3, '2022-12-27 00:00:00', 'Características Cassette 3', 'CódigoQR3', 'Observaciones Cassette 3', '', 1),
-(4, '2023-01-27 00:00:00', 'Características Cassette 4', 'CódigoQR4', 'Observaciones Cassette 4', '', 4),
-(5, '2023-01-29 00:00:00', 'Características Cassette 5', 'CódigoQR5', 'Observaciones Cassette 5', '', 4),
-(6, '2023-01-10 00:00:00', 'Características Cassette 6', 'CódigoQR6', 'Observaciones Cassette 6', '', 3),
-(7, '2023-01-19 00:00:00', 'Características Cassette 7', 'CódigoQR7', 'Observaciones Cassette 7', '', 2),
-(8, '2023-01-21 00:00:00', 'Características Cassette 8', 'CódigoQR8', 'Observaciones Cassette 8', '', 2),
-(9, '2023-02-20 00:00:00', 'Características Cassette 9', 'CódigoQR9', 'Observaciones Cassette 9', '', 3),
-(10, '2023-02-26 00:00:00', 'Características Cassette 10', 'CódigoQR10', 'Observaciones Cassette 10', '', 4);
+(1, '2022-12-24 00:00:00', 'Características Cassette 1', 'CódigoQR1', 'Observaciones Cassette 1', 'CORAZÓN', 1),
+(2, '2022-12-26 00:00:00', 'Características Cassette 2', 'CódigoQR2', 'Observaciones Cassette 2', 'CORAZÓN', 1),
+(3, '2022-12-27 00:00:00', 'Características Cassette 3', 'CódigoQR3', 'Observaciones Cassette 3', 'CORAZÓN', 1),
+(4, '2023-01-27 00:00:00', 'Características Cassette 4', 'CódigoQR4', 'Observaciones Cassette 4', 'RIÑÓN', 4),
+(5, '2023-01-29 00:00:00', 'Características Cassette 5', 'CódigoQR5', 'Observaciones Cassette 5', 'RIÑÓN', 4),
+(6, '2023-01-10 00:00:00', 'Características Cassette 6', 'CódigoQR6', 'Observaciones Cassette 6', 'TRÁQUEA', 3),
+(7, '2023-01-19 00:00:00', 'Características Cassette 7', 'CódigoQR7', 'Observaciones Cassette 7', 'HUESO', 2),
+(8, '2023-01-21 00:00:00', 'Características Cassette 8', 'CódigoQR8', 'Observaciones Cassette 8', 'HUESO', 2),
+(9, '2023-02-20 00:00:00', 'Características Cassette 9', 'CódigoQR9', 'Observaciones Cassette 9', 'TRÁQUEA', 3),
+(10, '2023-02-26 00:00:00', 'Características Cassette 10', 'CódigoQR10', 'Observaciones Cassette 10', 'RIÑÓN', 4);
 
 -- --------------------------------------------------------
 

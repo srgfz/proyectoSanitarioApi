@@ -21,6 +21,14 @@ const getByTecnico = async (tecnicoId) => {
     })
 }
 
+const getByFilters = async (organo, date1, date2) => {
+    const [cassettes, metadata] = await sequalize.query(
+        `SELECT * FROM cassettes WHERE organo="${organo}" AND fecha BETWEEN CAST('${date1}' AS DATE) AND CAST('${date2}' AS DATE);
+        `
+    )
+    return cassettes
+}
+
 const getMuestras = async (id) => {
     return await Cassette.findOne({
         where: {
@@ -57,6 +65,7 @@ module.exports = {
     getAll,
     getOne,
     getByTecnico,
+    getByFilters,
     getMuestras,
     post,
     put,
