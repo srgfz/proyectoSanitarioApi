@@ -12,8 +12,12 @@ const getByTecnico = async (req, res) => {
     res.json(await cassettesService.getByTecnico(req.params.id))
 }
 
-const getByFilters = async (req, res) => {
-    res.json(await cassettesService.getByFilters(req.params.organo, req.params.date1, req.params.date2))
+const getByDates = async (req, res) => {
+    res.json(await cassettesService.getByDates(req.params.date1, req.params.date2))
+}
+
+const getByOrgano = async (req, res) => {
+    res.json(await cassettesService.getByOrgano(req.params.organo))
 }
 
 const getMuestras = async (req, res) => {
@@ -43,7 +47,8 @@ module.exports = {
     getAll,
     getOne,
     getByTecnico,
-    getByFilters,
+    getByDates,
+    getByOrgano,
     getMuestras,
     post,
     remove,

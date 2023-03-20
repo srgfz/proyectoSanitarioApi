@@ -6,7 +6,12 @@ const Muestra = require("../models/Muestra")
 const sequalize = require("../db/db")
 
 const getAll = async () => {
-    return await Cassette.findAll()
+    return await Cassette.findAll({
+        order: [
+            ['fecha', 'DESC'],
+        ],
+        limit: 20
+    })
 }
 
 const getOne = async (id) => {
@@ -18,13 +23,29 @@ const getByTecnico = async (tecnicoId) => {
         where: {
             tecnicoId: tecnicoId,
         },
+        order: [
+            ['fecha', 'DESC'],
+        ],
+        limit: 20
     })
 }
 
-const getByFilters = async (organo, date1, date2) => {
+const getByOrgano = async (organo) => {
+    return await Cassette.findAll({
+        where: {
+            organo: organo,
+        },
+        order: [
+            ['fecha', 'DESC'],
+        ],
+        limit: 20
+    })
+}
+
+
+const getByDates = async (date1, date2) => {
     const [cassettes, metadata] = await sequalize.query(
-        `SELECT * FROM cassettes WHERE organo="${organo}" AND fecha BETWEEN CAST('${date1}' AS DATE) AND CAST('${date2}' AS DATE);
-        `
+        `SELECT * FROM cassettes WHERE fecha BETWEEN CAST('${date1}' AS DATE) AND CAST('${date2}' AS DATE) ORDER BY fecha DESC LIMIT 20;`
     )
     return cassettes
 }
@@ -36,7 +57,11 @@ const getMuestras = async (id) => {
         },
         include: {
             model: Muestra,
-        },
+            order: [
+                ['fecha', 'DESC'],
+            ],
+            limit: 20
+        }
     })
 }
 
@@ -65,7 +90,8 @@ module.exports = {
     getAll,
     getOne,
     getByTecnico,
-    getByFilters,
+    getByDates,
+    getByOrgano,
     getMuestras,
     post,
     put,

@@ -3,7 +3,11 @@ const Muestra = require("../models/Muestra")
 const sequalize = require("../db/db")
 
 const getAll = async () => {
-    return await Muestra.findAll()
+    return await Muestra.findAll({
+        order: [
+            ['fecha', 'DESC'],
+        ]
+    })
 }
 
 const getOne = async (id) => {
@@ -15,6 +19,10 @@ const getByTecnico = async (tecnicoId) => {
         where: {
             tecnicoId: tecnicoId,
         },
+        order: [
+            ['fecha', 'DESC'],
+        ],
+        limit: 20
     })
 }
 

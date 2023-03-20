@@ -44,16 +44,16 @@ CREATE TABLE `cassettes` (
 --
 
 INSERT INTO `cassettes` (`id`, `fecha`, `caracteristicas`, `codigoQR`, `observaciones`, `organo`, `tecnicoId`) VALUES
-(1, '2022-12-24 00:00:00', 'Características Cassette 1', 'CódigoQR1', 'Observaciones Cassette 1', 'CORAZÓN', 1),
-(2, '2022-12-26 00:00:00', 'Características Cassette 2', 'CódigoQR2', 'Observaciones Cassette 2', 'CORAZÓN', 1),
-(3, '2022-12-27 00:00:00', 'Características Cassette 3', 'CódigoQR3', 'Observaciones Cassette 3', 'CORAZÓN', 1),
-(4, '2023-01-27 00:00:00', 'Características Cassette 4', 'CódigoQR4', 'Observaciones Cassette 4', 'RIÑÓN', 4),
-(5, '2023-01-29 00:00:00', 'Características Cassette 5', 'CódigoQR5', 'Observaciones Cassette 5', 'RIÑÓN', 4),
-(6, '2023-01-10 00:00:00', 'Características Cassette 6', 'CódigoQR6', 'Observaciones Cassette 6', 'TRÁQUEA', 3),
-(7, '2023-01-19 00:00:00', 'Características Cassette 7', 'CódigoQR7', 'Observaciones Cassette 7', 'HUESO', 2),
-(8, '2023-01-21 00:00:00', 'Características Cassette 8', 'CódigoQR8', 'Observaciones Cassette 8', 'HUESO', 2),
-(9, '2023-02-20 00:00:00', 'Características Cassette 9', 'CódigoQR9', 'Observaciones Cassette 9', 'TRÁQUEA', 3),
-(10, '2023-02-26 00:00:00', 'Características Cassette 10', 'CódigoQR10', 'Observaciones Cassette 10', 'RIÑÓN', 4);
+(1, '2022-12-24 00:00:00', 'Características Cassette 1', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/1', 'Observaciones Cassette 1', 'CORAZÓN', 1),
+(2, '2022-12-26 00:00:00', 'Características Cassette 2', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/2', 'Observaciones Cassette 2', 'CORAZÓN', 1),
+(3, '2022-12-27 00:00:00', 'Características Cassette 3', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/3', 'Observaciones Cassette 3', 'CORAZÓN', 1),
+(4, '2023-01-27 00:00:00', 'Características Cassette 4', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/4', 'Observaciones Cassette 4', 'RIÑÓN', 4),
+(5, '2023-01-29 00:00:00', 'Características Cassette 5', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/5', 'Observaciones Cassette 5', 'RIÑÓN', 4),
+(6, '2023-01-10 00:00:00', 'Características Cassette 6', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/6', 'Observaciones Cassette 6', 'TRÁQUEA', 3),
+(7, '2023-01-19 00:00:00', 'Características Cassette 7', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/7', 'Observaciones Cassette 7', 'HUESO', 2),
+(8, '2023-01-21 00:00:00', 'Características Cassette 8', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/8', 'Observaciones Cassette 8', 'HUESO', 2),
+(9, '2023-02-20 00:00:00', 'Características Cassette 9', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/9', 'Observaciones Cassette 9', 'TRÁQUEA', 3),
+(10, '2023-02-26 00:00:00', 'Características Cassette 10', 'QRCODE~http://localhost:3000/sanitaria/cassettes/muestras/10', 'Observaciones Cassette 10', 'RIÑÓN', 4);
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,6 @@ CREATE TABLE `muestras` (
   `fecha` datetime NOT NULL,
   `observaciones` mediumtext DEFAULT NULL,
   `codigoQR` varchar(255) NOT NULL,
-  `imagenes` varchar(255) NOT NULL,
   `tincion` varchar(255) NOT NULL,
   `tecnicoId` int(11) DEFAULT NULL,
   `cassetteId` int(11) DEFAULT NULL
@@ -89,10 +88,10 @@ CREATE TABLE `muestras` (
 -- Volcado de datos para la tabla `muestras`
 --
 
-INSERT INTO `muestras` (`id`, `fecha`, `observaciones`, `codigoQR`, `imagenes`, `tincion`, `tecnicoId`, `cassetteId`) VALUES
-(4, '2022-03-09 00:00:00', 'Observaciones Muestra 3', 'CodigoQR Muestra3', '', 'Tipo A', 1, 1),
-(5, '2022-03-09 00:00:00', 'Observaciones Muestra 4', 'CodigoQR Muestra4', '', 'Tipo A', 1, 2),
-(6, '2022-03-09 00:00:00', 'Observaciones Muestra 5', 'CodigoQR Muestra5', '', 'Tipo B', 1, 3);
+INSERT INTO `muestras` (`id`, `fecha`, `observaciones`, `codigoQR`, `tincion`, `tecnicoId`, `cassetteId`) VALUES
+(1, '2022-03-09 00:00:00', 'Observaciones Muestra 3', 'QRCODE~http://localhost:3000/sanitaria/muestras/1', 'Tipo A', 1, 1),
+(2, '2022-03-09 00:00:00', 'Observaciones Muestra 4', 'QRCODE~http://localhost:3000/sanitaria/muestras/2', 'Tipo A', 1, 2),
+(3, '2022-03-09 00:00:00', 'Observaciones Muestra 5', 'QRCODE~http://localhost:3000/sanitaria/muestras/3', 'Tipo B', 1, 3);
 
 -- --------------------------------------------------------
 

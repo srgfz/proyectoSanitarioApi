@@ -9,7 +9,7 @@ const getOne = async (req, res) => {
 }
 
 const getInfo = async (req, res) => {
-    res.json(await tecnicosService.getInfo(req.params.id))
+    res.json(await tecnicosService.getInfo(req.params.email))
 }
 
 const login = async (req, res) => {

@@ -33,9 +33,15 @@ const getOne = async (id) => {
     })
 }
 
-const getInfo = async (id) => {
-    return await Tecnico.findByPk(id)
+const getInfo = async (email) => {
+    return await Tecnico.findOne({
+        where: {
+            email: email,
+        },
+        attributes: ["id", "nombre", "apellidos", "curso", "centro", "email"],
+    })
 }
+
 
 const createToken = (user) => {
     const payload = {
@@ -59,7 +65,7 @@ const login = async (body) => {
     });
     if (user) {
         if (bcryptjs.compareSync(body.password, user.password)) {//Login correcto
-            return { success: createToken(user) }//Si el login es correcto creamos y devolvemos el token para ese usuario
+            return { token: createToken(user) }//Si el login es correcto creamos y devolvemos el token para ese usuario
         } else {//Contraseña incorrecta
             return { error: "Login fallido 2" };
         }

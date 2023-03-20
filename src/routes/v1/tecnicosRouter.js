@@ -7,9 +7,9 @@ const middlewares = require("./middlewares/middlewares")
 
 //Acciones de heroes llamando a los métodos de su controlador:
 tecnicosRouter.get("/", tecnicosController.getAll)
-tecnicosRouter.get("/login", tecnicosController.login)
 tecnicosRouter.get("/:id", middlewares.checkToken, tecnicosController.getOne)
-tecnicosRouter.get("/info/:id", middlewares.checkToken, tecnicosController.getInfo)
+tecnicosRouter.get("/info/:email", tecnicosController.getInfo)
+tecnicosRouter.post("/login", tecnicosController.login)
 tecnicosRouter.post("/register", tecnicosController.post)
 tecnicosRouter.put("/:id", middlewares.checkToken, tecnicosController.put)
 tecnicosRouter.patch("/:id", tecnicosController.patch)
